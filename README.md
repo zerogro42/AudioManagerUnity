@@ -8,7 +8,7 @@ I've been using this singleton for a couple of XR projects based in Unity, figur
    - Create an empty AudioManager GameObject and attach the script to it.
    - Define sound clips in the `SoundClips` enum list.
    - Create an Audio Mixer according to your sounds and the way you like to setup your mix.
-   - Populate the `audioClipArray` with `AudioClipToPlay` instances, associating each sound clip with its corresponding audio clip and audio mixer group.
+   - In the inspector, populate the `audioClipArray` with `AudioClipToPlay` instances, associating each sound clip with its corresponding audio clip and audio mixer group.
 
 2. **Play Sounds:**
    - Call `PlaySound3D` or `PlaySound2D` in a script attached to a GameObject to play 3D or 2D sounds, respectively.
