@@ -1,6 +1,6 @@
 # Unity AudioManager Singleton
 
-I've been using this singleton for a couple of XR projects based in Unity, figured I should keep updating it here. I referenced a few existing audio manager scripts out there, particularly this logic from CodeMonkey[url[https://www.youtube.com/watch?v=QL29aTa7J5Q].
+I've been using this singleton for a couple of XR projects based in Unity, figured I should keep updating it here. I referenced a few existing audio manager scripts out there, particularly this logic from [CodeMonkey]([url](https://www.youtube.com/watch?v=QL29aTa7J5Q)).
 ## Features
 
 - **SoundClips Enumeration:** Enumerates all sound clip types for easy reference.
