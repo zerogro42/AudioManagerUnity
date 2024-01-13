@@ -1,14 +1,6 @@
 # Unity AudioManager Singleton
 
 I've been using this singleton for a couple of XR projects based in Unity, figured I should keep updating it here. I referenced a few existing audio manager scripts out there, particularly this logic from [CodeMonkey](https://www.youtube.com/watch?v=QL29aTa7J5Q).
-## Features
-
-- **SoundClips Enumeration:** Enumerates all sound clip types for easy reference.
-- **AudioClipToPlay Class:** Holds the values of sound clips and their associated audio clips.
-- **PlaySound3D Method:** Plays 3D sounds with spatial settings, allowing for positioning in 3D space.
-- **PlaySound2D Method:** Plays 2D sounds without spatial settings.
-- **StopSound Method:** Stops a currently playing sound based on the specified sound clip.
-- **FadeInSound and FadeOutSound Methods:** Placeholder methods for future implementation of sound fading.
 
 ## How to Use
 
