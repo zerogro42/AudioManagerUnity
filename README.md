@@ -17,7 +17,7 @@ I've been using this singleton for a couple of XR projects based in Unity, figur
 3. **Stop Sounds:**
    - Call `StopSound` to stop a currently playing sound based on the specified sound clip.
 
-4. **Fade In/Out (Future):**
+4. **Fade In/Out:**
    - Use the `FadeInSound` and `FadeOutSound` methods for implementing sound fading.
 
 ## Example Usage
