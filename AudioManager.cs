@@ -175,7 +175,15 @@ public class AudioManager : MonoBehaviour
         {
             if(audioClipToPlay.soundClips == sound)
             {
-                return audioClipToPlay.audioClip;
+                if(audioClipToPlay.audioClip != null)
+                {
+                    return audioClipToPlay.audioClip;
+                }
+                else
+                {
+                    Debug.LogError("Please assign an audio clip for" + sound + "sound!");
+                    return null;
+                }
             }
         }
         Debug.LogError("Sound" + sound + "not found!");
@@ -193,6 +201,17 @@ public class AudioManager : MonoBehaviour
         foreach (AudioClipToPlay audioClipToPlay in Instance.audioClipArray)
         {
             if(audioClipToPlay.soundClips == sound)
+            {
+                if(audioClipToPlay.audioMixerGroup != null)
+                {
+                    return audioClipToPlay.audioMixerGroup;
+                }
+                else
+                {
+                    Debug.LogError("Please assign Audio Mixer Group for" + sound + "sound!");
+                    return null;
+                }
+            }
             return audioClipToPlay.audioMixerGroup;
         }
         return null;
