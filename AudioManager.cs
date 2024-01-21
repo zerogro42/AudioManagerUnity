@@ -212,7 +212,6 @@ public class AudioManager : MonoBehaviour
                     return null;
                 }
             }
-            return audioClipToPlay.audioMixerGroup;
         }
         return null;
     }
