@@ -127,7 +127,7 @@ public class AudioManager : MonoBehaviour
     /// <param name="spatialBlend"></param>
     /// <param name="spread"></param>
     /// <param name="loop"></param>
-    public static void PlaySound2D(SoundClips sound, float pitch, float volume, bool loop = false, bool fadeInSound = false, float fadeInTime)
+    public static void PlaySound2D(SoundClips sound, float volume, float pitch, bool loop = false, bool fadeIn = false, float fadeInTime)
     {
 
         if (playingAudioSources.ContainsKey(sound) && playingAudioSources[sound].isPlaying)
@@ -231,7 +231,7 @@ public class AudioManager : MonoBehaviour
             {
                 float currentFadeTime = 0f;
                 currentFadeTime = Time.time - startTime;
-                audioSource.volume = Mathf.lerp(0f, startVolume, currentFadeTime / fadeInTime);
+                audioSource.volume = Mathf.Lerp(0f, startVolume, currentFadeTime / fadeInTime);
 
                 yield return null;
             }
@@ -253,7 +253,7 @@ public class AudioManager : MonoBehaviour
             {
                 float currentFadeTime = 0f;
                 currentFadeTime = Time.time - startTime;
-                audioSource.volume = Mathf.lerp(startVolume, 0f, currentFadeTime / fadeOutTime);
+                audioSource.volume = Mathf.Lerp(startVolume, 0f, currentFadeTime / fadeOutTime);
 
                 yield return null;
             }
