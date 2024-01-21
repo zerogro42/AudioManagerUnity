@@ -33,7 +33,7 @@ AudioManager.PlaySound2D(AudioManager.SoundClips.RoomAmbience, 0.8f, 0.5f, true,
 AudioManager.StopSound(AudioManager.SoundClips.RoomAmbience);
 
 // Fade Out sound
-AudioManager.FadeOutSound(AudioManager.SoundClips.RoomAmbience, 3f);
+StartCoroutine(FadeOutSound(AudioManager.SoundClips.RoomAmbience, 3f));
 
 ```
 
