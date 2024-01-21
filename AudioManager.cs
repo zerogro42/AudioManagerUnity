@@ -77,7 +77,7 @@ public class AudioManager : MonoBehaviour
     /// <param name="spatialBlend"></param>
     /// <param name="spread"></param>
     /// <param name="loop"></param>
-    public static void PlaySound3D(SoundClips sound, Transform positionTransform, float pitch, float volume, float spatialBlend, float spread, bool loop = false)
+    public static void PlaySound3D(SoundClips sound, Transform positionTransform, float volume, float pitch, float spatialBlend, float spread, bool loop = false, bool fadeIn = false, float fadeInTime)
     {
 
         if (playingAudioSources.ContainsKey(sound) && playingAudioSources[sound].isPlaying)
@@ -99,6 +99,12 @@ public class AudioManager : MonoBehaviour
         audioSource.loop = loop;
 
         audioSource.Play();
+
+        if (fadeIn == true)
+        {
+            Instance.StartCoroutine(Instance.FadeInSound(sound, fadeInTime));
+        }
+        else { }
 
         if (loop == true)
         {
@@ -187,7 +193,10 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    // Stop Sound
+    /// <summary>
+    /// Immediately stop the sound.
+    /// </summary>
+    /// <param name="sound"></param>
     public static void StopSound(SoundClips sound)
     {
         if (playingAudioSources.ContainsKey(sound))
@@ -201,15 +210,50 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    // Fade In Sound
-    public void FadeInSound(float time)
+    /// <summary>
+    /// Fade in sound in specified seconds.
+    /// </summary>
+    /// <param name="time"></param>
+    public IEnumerator FadeInSound(SoundClips sound, float fadeInTime)
     {
+        if (playingAudioSources.ContainsKey(sound))
+        {
+            AudioSource audioSource = playingAudioSources[sound];
+            float startVolume = audioSource.volume;
+            float startTime = Time.time;
+            while (startTime + fadeInTime > Time.time)
+            {
+                float currentFadeTime = 0f;
+                currentFadeTime = Time.time - startTime;
+                audioSource.volume = Mathf.lerp(0f, startVolume, currentFadeTime / fadeInTime);
 
+                yield return null;
+            }
+        }
     }
 
-    // Fade Out Sound
-    public void FadeOutSound(float time)
+    /// <summary>
+    /// Fade out sound in specified seconds. Stops and destroys the audio source when faded out.
+    /// </summary>
+    /// <param name="time"></param>
+    public IEnumerator FadeOutSound(SoundClips sound, float fadeOutTime)
     {
+        if (playingAudioSources.ContainsKey(sound))
+        {
+            AudioSource audioSource = playingAudioSources[sound];
+            float startVolume = audioSource.volume;
+            float startTime = Time.time;
+            while (startTime + fadeOutTime > Time.time)
+            {
+                float currentFadeTime = 0f;
+                currentFadeTime = Time.time - startTime;
+                audioSource.volume = Mathf.lerp(startVolume, 0f, currentFadeTime / fadeOutTime);
 
+                yield return null;
+            }
+            audioSource.Stop();
+            playingAudioSources.Remove(sound);
+            Destroy(audioSource.gameObject);
+        }
     }
 }
