@@ -127,7 +127,7 @@ public class AudioManager : MonoBehaviour
     /// <param name="spatialBlend"></param>
     /// <param name="spread"></param>
     /// <param name="loop"></param>
-    public static void PlaySound2D(SoundClips sound, float pitch, float volume, bool loop = false)
+    public static void PlaySound2D(SoundClips sound, float pitch, float volume, bool loop = false, bool fadeInSound = false, float fadeInTime)
     {
 
         if (playingAudioSources.ContainsKey(sound) && playingAudioSources[sound].isPlaying)
@@ -146,6 +146,12 @@ public class AudioManager : MonoBehaviour
         audioSource.loop = loop;
 
         audioSource.Play();
+
+        if (fadeIn == true)
+        {
+            Instance.StartCoroutine(Instance.FadeInSound(sound, fadeInTime));
+        }
+        else { }
 
         if (loop == true)
         {
