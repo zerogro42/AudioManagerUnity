@@ -24,13 +24,16 @@ I've been using this singleton for a couple of XR projects based in Unity, figur
 
 ```csharp
 // Play a 3D sound at the object's position with default settings
-AudioManager.PlaySound3D(AudioManager.SoundClips.ButtonClick, playerTransform, 1f, 1f, 1f, 1f, false);
+AudioManager.PlaySound3D(AudioManager.SoundClips.ButtonClick, playerTransform, 1f, 1f, 1f, 1f, false, true, 1f);
 
 // Play a 2D looping sound with custom pitch and volume
-AudioManager.PlaySound2D(AudioManager.SoundClips.RoomAmbience, 0.8f, 0.5f, true);
+AudioManager.PlaySound2D(AudioManager.SoundClips.RoomAmbience, 0.8f, 0.5f, true, false, 0f);
 
 // Stop the RoomAmbience sound
 AudioManager.StopSound(AudioManager.SoundClips.RoomAmbience);
+
+// Fade Out sound
+AudioManager.FadeOutSound(AudioManager.SoundClips.RoomAmbience, 3f);
 
 ```
 
