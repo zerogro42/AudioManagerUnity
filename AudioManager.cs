@@ -19,10 +19,6 @@ public class AudioManager : MonoBehaviour
         Sound2,
         Sound3,
         Sound4,
-        Sound5,
-        Sound6,
-        Sound7,
-        Sound8,
     }
 
     /// <summary>
