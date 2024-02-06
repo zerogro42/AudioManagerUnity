@@ -15,18 +15,14 @@ public class AudioManager : MonoBehaviour
     /// </summary>
     public enum SoundClips
     {
-        ButtonClick,
-        ButtonHover,
-        MarkerHover,
-        CardAnimIn,
-        CardAnimOut,
-        TableMoveUp,
-        TableMoveDown,
-        EarthAmbience,
-        RoomAmbience,
-        ExitButtonClick,
-        GCBusClick,
-        GCBusZoom,
+        Sound1, // Rename these accordingly
+        Sound2,
+        Sound3,
+        Sound4,
+        Sound5,
+        Sound6,
+        Sound7,
+        Sound8,
     }
 
     /// <summary>
