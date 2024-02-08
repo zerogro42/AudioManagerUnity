@@ -37,5 +37,7 @@ AudioManager.StopSound(AudioManager.SoundClips.RoomAmbience);
 StartCoroutine(FadeOutSound(AudioManager.SoundClips.RoomAmbience, 3f));
 
 ```
+![Capture 4](https://github.com/ashaydave/AudioManagerUnity/assets/112194962/d94a5f81-b64e-41a8-baa9-7818706df228)
+
 ## Future
 I know this can be optimized even further, probably by using object pooling instead of creating a new GameObject for each sound, if you have a lot of sounds playing frequently. I'll try adding this in the future either as a separate script or integrated into the Audio Manager.
