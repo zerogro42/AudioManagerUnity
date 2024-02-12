@@ -25,7 +25,7 @@ I've been using this singleton for a couple of XR projects based in Unity, figur
 ```csharp
 // Play a 3D sound at the object's position with default settings
 // Note - "ButtonClick" will be a SoundClips from the Sound enum
-AudioManager.PlaySound3D(AudioManager.SoundClips.ButtonClick, playerTransform, 1f, 1f, 1f, 1f, false, true, 1f);
+AudioManager.PlaySound3D(AudioManager.SoundClips.ButtonClick, playerTransform, 1f, 1f, 0f, false, true, 1f);
 
 // Play a 2D looping sound with custom pitch and volume
 AudioManager.PlaySound2D(AudioManager.SoundClips.RoomAmbience, 0.8f, 0.5f, true, false, 0f);
