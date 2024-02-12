@@ -69,7 +69,7 @@ public class AudioManager : MonoBehaviour
     /// <param name="spatialBlend"></param>
     /// <param name="spread"></param>
     /// <param name="loop"></param>
-    public static void PlaySound3D(SoundClips sound, Transform positionTransform, float volume, float pitch, float spatialBlend, float spread, bool loop = false, bool fadeIn = false, float fadeInTime)
+    public static void PlaySound3D(SoundClips sound, Transform positionTransform, float volume, float pitch, bool loop = false, bool fadeIn = false, float fadeInTime)
     {
 
         if (playingAudioSources.ContainsKey(sound) && playingAudioSources[sound].isPlaying)
@@ -86,8 +86,7 @@ public class AudioManager : MonoBehaviour
         audioSource.clip = GetAudioClip(sound);
         audioSource.pitch = pitch;
         audioSource.volume = volume;
-        audioSource.spatialBlend = spatialBlend;
-        audioSource.spread = spread;
+        audioSource.spatialBlend = 1f;
         audioSource.loop = loop;
 
         audioSource.Play();
