@@ -69,7 +69,7 @@ public class AudioManager : MonoBehaviour
     /// <param name="spatialBlend"></param>
     /// <param name="spread"></param>
     /// <param name="loop"></param>
-    public static void PlaySound3D(SoundClips sound, Transform positionTransform, float volume, float pitch, float spread, bool loop = false, bool fadeIn = false, float fadeInTime)
+    public static void PlaySound3D(SoundClips sound, Transform positionTransform, float volume, float pitch, float spread, float fadeInTime, bool loop = false, bool fadeIn = false)
     {
 
         if (playingAudioSources.ContainsKey(sound) && playingAudioSources[sound].isPlaying)
@@ -119,7 +119,7 @@ public class AudioManager : MonoBehaviour
     /// <param name="spatialBlend"></param>
     /// <param name="spread"></param>
     /// <param name="loop"></param>
-    public static void PlaySound2D(SoundClips sound, float volume, float pitch, bool loop = false, bool fadeIn = false, float fadeInTime)
+    public static void PlaySound2D(SoundClips sound, float volume, float pitch, float fadeInTime bool, loop = false, bool fadeIn = false)
     {
 
         if (playingAudioSources.ContainsKey(sound) && playingAudioSources[sound].isPlaying)
